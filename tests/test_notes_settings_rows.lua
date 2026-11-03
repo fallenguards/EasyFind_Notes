@@ -135,6 +135,7 @@ function tests.everyPageControlIsARow()
 end
 
 function tests.everyRowWorksWithNoWindow()
+    if not H.CoreAtLeast("4.2.0") then return end
     local rows, env = DeclaredRows()
     local seen = {}
     for _, row in ipairs(rows) do

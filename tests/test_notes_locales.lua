@@ -35,6 +35,7 @@ function tests.everyLocaleHasTheEnglishKeys()
 end
 
 function tests.everyKeyNamedIsDefined()
+    if not H.CoreAtLeast("4.3.0") then return end
     local defined = Keys("\n" .. Read(H.ADDON_ROOT .. "/Locales/enUS.lua"))
     for k in pairs(Keys("\n" .. Read(H.EASYFIND_ROOT .. "/Locales/enUS.lua"))) do defined[k] = true end
     local missing = {}

@@ -11,6 +11,7 @@
 local H = require("Harness")
 
 local ALLOWED = {
+    ["Guard.lua|text"] = { 2, "alert" },
     ["Notes.lua|NOTES_LINK_ASKING_FMT"] = { 1, "alert" },
     ["Notes.lua|NOTES_LINK_NO_ANSWER_FMT"] = { 1, "alert" },
     ["Notes.lua|NOTES_NOTHING_TO_UNDO"] = { 1, "refusal" },

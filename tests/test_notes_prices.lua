@@ -21,6 +21,7 @@ end
 local tests = {}
 
 function tests.choices_oneEachSource_namedForTheExtension()
+    if not H.CoreAtLeast("4.3.0") then return end
     local API, ns = Core()
     API.RegisterPriceSource("tsm", { label = "TSM", price = function() end,
         sources = function() return { { key = "dbmarket", label = "Market Value" }, { key = "vendorsell", label = "Vendor Sell" } } end })
@@ -187,6 +188,7 @@ end
 -- The tail and the total row read the same pick; the house's own box
 -- waits for an extension's search.
 function tests.wiring()
+    if not H.CoreAtLeast("4.3.0") then return end
     local src = Read("Lines.lua")
     H.assertTrue(src:find("local cost = unit and showPrices and MoneyText(unit * left)", 1, true) ~= nil, "a line: what is left")
     H.assertTrue(src:find("sum = sum + unit * left\n", 1, true) ~= nil, "the total: their sum")

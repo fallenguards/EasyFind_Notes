@@ -268,3 +268,4 @@ L["NOTES_SHOP_NEVER"]                    = "Больше не показыват
 L["CHECK_TRACK"]                         = "Отслеживать"
 L["NOTES_REMIND_CLEAR_ALL"]              = "Очистить все"
 L["NOTES_REMIND_CUSTOM"]                 = "Другое..."
+L["EXT_NEEDS_EASYFIND_FMT"]             = "Нужен EasyFind %s или новее: обновите EasyFind."

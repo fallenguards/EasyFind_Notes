@@ -238,6 +238,7 @@ end
 
 -- The offer's box and its X in the corner; Notes' settings turn it back on.
 function tests.theOffer_neverBox_andTheSettingBack()
+    if not H.CoreAtLeast("4.3.0") then return end
     local lines = Read("Lines.lua")
     H.assertTrue(lines:find('row.never = CreateFrame("CheckButton", nil, row, "UICheckButtonTemplate")', 1, true) ~= nil, "the box")
     H.assertTrue(lines:find('row.never.text:SetText(L["NOTES_SHOP_NEVER"])', 1, true) ~= nil)

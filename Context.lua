@@ -5,7 +5,7 @@ local _, notesNS = ...
 -- applies now (Applies). Tags are { type, id, name }.
 local EasyFind = EasyFind
 local ns = EasyFind and EasyFind._ns
-if not ns then return end
+if not ns or notesNS.tooOld then return end
 
 local L = ns.L
 local Caps = ns.Caps or {}

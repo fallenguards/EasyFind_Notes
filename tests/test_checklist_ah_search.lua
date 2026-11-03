@@ -35,6 +35,7 @@ function tests.theHouse_openByEvents_searchedInRetailsOrTheClassicBox()
 end
 
 function tests.linkedSearch_handsTheLineToTheExtension()
+    if not H.CoreAtLeast("4.0.2") then return end
     local src = Read("Notes.lua")
     local s = assert(src:find("function notesNS.LinkedSearch(note, line)", 1, true))
     local body = src:sub(s, s + 600)
