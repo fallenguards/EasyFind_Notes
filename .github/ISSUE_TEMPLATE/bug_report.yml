@@ -1,0 +1,85 @@
+name: Bug Report
+description: Something isn't working as expected
+labels: ["bug"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Addon versions
+      description: EasyFind_Notes and EasyFind, from your addon list (AddOns button on the character select screen).
+      placeholder: "e.g. Notes 1.0.0, EasyFind 5.0.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: client
+    attributes:
+      label: Which game?
+      options:
+        - Retail
+        - WoW Forever
+        - Classic Era
+        - TBC Anniversary
+        - Mists Classic
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature
+    attributes:
+      label: Which part?
+      options:
+        - Writing and formatting (lists, links, colors, undo)
+        - Checklists (lines the game ticks, counts, resets)
+        - Shopping lists (items, counts, prices, auction house searches)
+        - Note windows, tags and reminders
+        - Options / Settings
+        - Other / Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe what went wrong.
+      placeholder: Tell us what you saw.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      placeholder: Tell us what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: How can we reproduce it?
+      description: Which note or list, what you typed or clicked, and what happened.
+      placeholder: |
+        1. Make a new note a shopping list from its list menu
+        2. Type "linen cloth"
+        3. ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error message (if any)
+      description: If you saw a Lua error, paste it here. Addons like BugSack or !BugGrabber can help capture these.
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Screenshots, other addons that might conflict, or any other details.
+    validations:
+      required: false
