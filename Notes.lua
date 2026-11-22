@@ -1663,7 +1663,9 @@ local NoteLink = { PREFIX = "EFNote", PART = 220, pending = {}, asked = {}, send
 
 -- The whisper target: the character name a sender carries, never the surname.
 function NoteLink.Owner()
-    local realm = GetNormalizedRealmName and GetNormalizedRealmName() or (GetRealmName() or ""):gsub("%s", "")
+    -- EasyFind's own answer where it has one: the client's is empty in some sessions.
+    local realm = ns.NormalizedRealmName and ns.NormalizedRealmName()
+        or (GetNormalizedRealmName and GetNormalizedRealmName()) or (GetRealmName() or ""):gsub("%s", "")
     return (ns.WhisperName() or "?") .. "-" .. realm
 end
 
