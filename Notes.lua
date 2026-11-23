@@ -10359,6 +10359,10 @@ function notesNS.SettingRows()
             function() return ChipKindOn(kind) end, function(on) SetChipKind(kind, on) end)
     end
     rows[#rows + 1] = Row(L["NOTES_RESET_ALL"], "button", nil, nil, nil, { press = notesNS.ResetLook })
+    -- EasyFind's own switches for notes (the tooltip hint, chat names...).
+    if ns.NotesSaveSwitchRows then
+        for _, r in ipairs(ns.NotesSaveSwitchRows()) do rows[#rows + 1] = r end
+    end
     return rows
 end
 
@@ -10446,6 +10450,15 @@ function notesNS.BuildSettingsPage(page, kit)
     end)
     local reset = ns.CreateModernButton(page, L["NOTES_RESET_ALL"], kit.BUTTON_WIDTH, 22)
     reset:SetPoint("TOPLEFT", kindsRow, "BOTTOMLEFT", kit.ROW_WIDTH - 8 - kit.BUTTON_WIDTH, -8)
+    -- EasyFind's own switches for notes, under the look's reset: this page
+    -- takes EasyFind's over when the extension loads (they went missing,
+    -- the tooltip hint's among them, 2026-11-23).
+    if ns.NotesSaveSwitches then
+        local under = CreateFrame("Frame", nil, page)
+        under:SetSize(1, 1)
+        under:SetPoint("TOPLEFT", kindsRow, "BOTTOMLEFT", 0, -38)
+        ns.NotesSaveSwitches(page, kit, under)
+    end
     reset:SetScript("OnClick", function()
         notesNS.ResetLook()
         scaleRow:SetValue(UI_SCALE_DEFAULT * 100)
