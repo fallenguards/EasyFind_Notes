@@ -4,6 +4,13 @@ All notable changes to EasyFind: Notes Extension are documented in this file.
 
 ---
 
+## [1.0.1] - 2026-11-22
+
+### Fixed
+- **Linked notes**: a note linked in chat names its owner in full in a session where the game gives no realm name, so a click on the link still asks the right player for it (with EasyFind 5.6.0)
+
+---
+
 ## [1.0.0] - 2026-11-03
 
 ### Added
