@@ -3,7 +3,7 @@
 ## Notes: Notes, checklists and shopping lists that tick themselves, in EasyFind's search. Requires EasyFind.
 ## Author: justawower
 ## X-Curse-Project-ID: 1782460
-## Version: 1.0.1
+## Version: 1.1.0
 ## IconTexture: Interface\AddOns\EasyFind\textures\SpyglassMinimap
 ## Group: EasyFind
 ## Category: UI

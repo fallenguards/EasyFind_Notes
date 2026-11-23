@@ -4,6 +4,19 @@ All notable changes to EasyFind: Notes Extension are documented in this file.
 
 ---
 
+## [1.1.0] - 2026-11-23
+
+### Added
+- **EasyFind's note switches on this page**: where notes find you, notes on tooltips, names in chat and player menus, the Ctrl+right-click hint and prices sit under the window's own settings, so every notes setting is in one place (with EasyFind's next update)
+
+### Fixed
+- **Settings text**: the note color and situation chip rows use the same text size as the rest of the page
+
+### Changed
+- Marked up to date for WoW 12.1.7, so the game no longer lists it as out of date there
+
+---
+
 ## [1.0.1] - 2026-11-22
 
 ### Fixed
